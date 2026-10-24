@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Glaido Pro</string>
+	<key>CFBundleExecutable</key>
+	<string>GlaidoReconstructed</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.glaido.os.reconstructed</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Glaido Pro</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.4.4</string>
+	<key>CFBundleVersion</key>
+	<string>0.4.4</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>CFBundleIconFile</key>
+	<string>icon.icns</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>glaido</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>com.glaido.os.reconstructed glaido</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+	</array>
+	<key>LSRequiresCarbon</key>
+	<true/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>LSUIElement</key>
+	<false/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Glaido needs microphone access to transcribe your voice.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Glaido uses on-device and live speech recognition to transcribe your voice into text and commands.</string>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>Glaido needs accessibility permissions to capture global hotkeys and insert text into active applications.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Glaido uses Apple Events to inspect active application context.</string>
+</dict>
+</plist>

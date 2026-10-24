@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="/tauri-shim.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaido</title>
+    <script>
+      // Apply cached theme before first paint to prevent dark→light flash.
+      (function() {
+        var a = 'dark';
+        try { var c = localStorage.getItem('glaido:appearance'); if (c === 'light' || c === 'auto') a = c; } catch(e) {}
+        var dark = a === 'dark' || (a === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var theme = dark ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.setProperty('--startup-bg', dark ? '#0D0D0D' : '#F2F2F2');
+        document.documentElement.style.setProperty('--startup-text', dark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.5)');
+        document.documentElement.style.setProperty('--startup-logo', dark ? '#BFF549' : '#000000');
+      })();
+    </script>
+    <style nonce="__TAURI_STYLE_NONCE__">
+      body { margin: 0; background: var(--startup-bg, #0D0D0D); }
+      @keyframes glaido-pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+      @keyframes glaido-fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+      .startup-loader {
+        position: fixed; inset: 0;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+      }
+      .startup-loader svg { animation: glaido-fade-in 0.4s ease-out both, glaido-pulse 2s ease-in-out 0.4s infinite; }
+      .startup-saying {
+        margin-top: 16px;
+        max-width: 280px;
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--startup-text, rgba(255, 255, 255, 0.7));
+        animation: glaido-fade-in 0.4s ease-out both;
+      }
+    </style>
+    <script type="module" crossorigin="" src="/assets/main-CcBENaWa.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/assets/boot-9YttYwB8.js">
+    <link rel="modulepreload" crossorigin="" href="/assets/toastOverlayDelivery-D7mHK1cH.js">
+    <link rel="modulepreload" crossorigin="" href="/assets/MarkdownRenderer-Cove2Qo_.js">
+    <link rel="modulepreload" crossorigin="" href="/assets/useRecordingSession-COSgA7iB.js">
+    <link rel="modulepreload" crossorigin="" href="/assets/audio-BxBzkST2.js">
+    <link rel="stylesheet" crossorigin="" href="/assets/main-DGcY-y6n.css">
+  </head>
+  <body>
+    <div id="root">
+      <div class="startup-loader">
+        <svg width="40" height="40" viewBox="0 0 83 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M66.8636 27.3358H30.8497C29.466 27.3358 28.3443 28.4546 28.3443 29.8348V38.5815C28.3443 39.9617 29.466 41.0805 30.8497 41.0805H67.1707C68.3227 41.0805 69.2805 41.9652 69.3689 43.111V65.7586C69.3689 67.1388 70.4906 68.2577 71.8742 68.2577H80.4862C81.8699 68.2577 82.9915 67.1388 82.9915 65.7586V43.5796C82.9915 42.1994 81.8699 41.0805 80.4862 41.0805H72.0308C70.5607 41.0805 69.3689 39.8917 69.3689 38.4253V29.8348C69.3689 28.4546 68.2472 27.3358 66.8636 27.3358Z" fill="var(--startup-logo, #BFF549)"></path>
+          <path d="M55.9037 65.9124V57.1657C55.9037 55.7855 54.7821 54.6667 53.3984 54.6667H24.2741C18.9125 54.6667 14.566 50.3311 14.566 44.9829V17.4933C14.566 15.4231 16.2485 13.7448 18.324 13.7448H66.7079C68.0915 13.7448 69.2132 12.6259 69.2132 11.2457V2.49905C69.2132 1.11886 68.0915 0 66.7079 0H18.4806C8.79504 0 0.943359 7.83203 0.943359 17.4933V45.3504C0.943359 51.3155 3.31893 57.0363 7.54747 61.2543L28.3452 82V70.9105C28.3452 69.5303 29.4669 68.4114 30.8506 68.4114H53.3984C54.7821 68.4114 55.9037 67.2926 55.9037 65.9124Z" fill="var(--startup-logo, #BFF549)"></path>
+        </svg>
+        <p class="startup-saying" id="startup-saying"></p>
+      </div>
+    </div>
+    <script>
+      var s=["Glide faster than your fingers could.","Your keyboard is on vacation.","Because typing is so last century.","Say it. Done. You\u2019re welcome.","Who needs a keyboard when you\u2019ve got pipes like that?","Your voice just got a promotion.","Less typing, more living.","Turning hmms into done.","The fastest shortcut? Your voice.","Speak and ye shall receive.","Your words, at the speed of thought.","Talk the talk, we\u2019ll type the type.","Fingers free, mind at ease.","Making keyboards jealous since 2025.","Why type when you can just say it?","Sit back, speak up, get stuff done.","Your voice called, it wants more responsibility.","From blah-blah to ta-da.","The pen is mighty, but the voice is mightier.","Ctrl+S? More like Ctrl+Say.","One small speak for you, one giant leap for productivity.","Your vocal cords: the original keyboard."];
+      document.getElementById("startup-saying").textContent=s[Math.floor(Math.random()*s.length)];
+    </script>
+  
+
+</body></html>
